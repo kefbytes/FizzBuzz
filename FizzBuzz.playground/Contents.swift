@@ -28,3 +28,23 @@ for num in 1 ... 100 {
         print(num)
     }
 }
+
+print("------------------ A solution using higher level function ------------------")
+func fizzBuzz(num: Int) -> String {
+    if num % 3 == 0 && num % 5 == 0 {
+        return("FizzBuzz")
+    } else if num % 3 == 0 {
+        return("Fizz")
+    } else if num % 5 == 0 {
+        return("Buzz")
+    }
+    return String(num)
+}
+
+func getRandomCount() -> Int {
+    return Int.random(in: 4...50)
+}
+
+let resultsArray = Array(1...getRandomCount()).map {fizzBuzz(num: $0)}
+print(resultsArray)
+
