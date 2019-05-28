@@ -13,7 +13,7 @@ for num in 1 ... 100 {
     }
 }
 
-print("------------------ Switch ------------------")
+print("-------------- Switch with tuple -------------")
 for num in 1 ... 100 {
     let fizz = (num % 3 == 0)
     let buzz = (num % 5 == 0)
@@ -25,6 +25,20 @@ for num in 1 ... 100 {
     case (true, true):
         print("FizzBuzz")
     case (false, false):
+        print(num)
+    }
+}
+
+print("--------------- Switch on Bool --------------")
+for num in 1 ... 100 {
+    switch true {
+    case num % 3 == 0 && num % 5 != 0:
+        print("Fizz")
+    case num % 5 == 0 && num % 3 != 0:
+        print("Buzz")
+    case num % 3 == 0 && num % 5 == 0:
+        print("FizzBuzz")
+    default:
         print(num)
     }
 }
